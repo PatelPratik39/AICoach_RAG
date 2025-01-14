@@ -4,10 +4,10 @@ import axios from "axios";
 import * as XLSX from "xlsx";
 import * as fs from "fs";
 import * as path from "path";
-import OpenAI from "Openai";
+import OpenAI from "openai";
 import pdfParse from "pdf-parse";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
-
+// import { encoding_for_model } from "tiktoken";
 import "dotenv/config";
 
 // Type Definitions
@@ -30,8 +30,7 @@ const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 const aiCoachData = [
   "https://nces.ed.gov/pubs2024/2024144.pdf",
-  "https://www.isbe.net/_layouts/Download.aspx?SourceUrl=/Documents/24-RC-Pub-Data-Set.xlsx",
-  "https://www.isbe.net/_layouts/Download.aspx?SourceUrl=/Documents/IL-Student-Growth-2024-CohortvsBaseline.xlsx",
+ 
 ];
 
 // Process PDF
@@ -210,3 +209,7 @@ const createCollection = async (similarityMetric: SimiliarityMetric = "dot_produ
 
 // Execute
 createCollection().then(() => loadSampleData());
+/**
+ *  "https://www.isbe.net/_layouts/Download.aspx?SourceUrl=/Documents/24-RC-Pub-Data-Set.xlsx",
+  "https://www.isbe.net/_layouts/Download.aspx?SourceUrl=/Documents/IL-Student-Growth-2024-CohortvsBaseline.xlsx",
+ */

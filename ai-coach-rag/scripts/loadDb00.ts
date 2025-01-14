@@ -4,7 +4,7 @@ import axios from "axios";
 import * as XLSX from "xlsx";
 import * as fs from "fs";
 import * as path from "path";
-import OpenAI from "Openai";
+import OpenAI from "openai";
 import pdfParse from "pdf-parse";
 import {RecursiveCharacterTextSplitter} from "langchain/text_splitter";
 

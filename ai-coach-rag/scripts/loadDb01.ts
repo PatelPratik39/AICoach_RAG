@@ -4,7 +4,7 @@ import axios from "axios";
 import * as XLSX from "xlsx";
 import * as fs from "fs";
 import * as path from "path";
-import OpenAI from "Openai";
+import OpenAI from "openai";
 import pdfParse from "pdf-parse";
 import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 
@@ -111,10 +111,10 @@ const scrapePage = async (url: string): Promise<string | null> => {
 const loadSampleData = async () => {
   const collection = db.collection(ASTRA_DB_COLLECTION);
 
-//   const urls = [
-//     "https://www.isbe.net/_layouts/Download.aspx?SourceUrl=/Documents/24-RC-Pub-Data-Set.xlsx",
-//     "https://www.isbe.net/_layouts/Download.aspx?SourceUrl=/Documents/IL-Student-Growth-2024-CohortvsBaseline.xlsx",
-//   ];
+  const urls = [
+    "https://www.isbe.net/_layouts/Download.aspx?SourceUrl=/Documents/24-RC-Pub-Data-Set.xlsx",
+    "https://www.isbe.net/_layouts/Download.aspx?SourceUrl=/Documents/IL-Student-Growth-2024-CohortvsBaseline.xlsx",
+  ];
 
   for (const url of urls) {
     console.log(`Processing URL: ${url}`);
